@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-2</title>
+    <style>
+        p {
+            width: 400px;
+            height: 200px;
+            background-color: aqua;
+            border: 1px solid black;
+        }
+
+        button {
+            background-color: gray;
+            padding: 10px;
+            border-radius: 5%;
+            color: wheat;
+        }
+
+        button:hover {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <p id="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+            galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
+            also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+            publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+
+    <button onclick="changeColor()">Change Color</button>
+
+    <script>
+        var flag = 0;
+        function changeColor() {
+            let p = document.querySelector("p")
+
+            if (flag === 0) {
+                p.style.backgroundColor = 'Red';
+                flag = 1
+            }
+            else {
+                p.style.backgroundColor = 'aqua';
+                flag = 0
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
