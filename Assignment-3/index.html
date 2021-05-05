@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            border: 2px solid #b60c0c;
+        }
+        img{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+            let d=document.querySelector("div")
+            d.style.borderColor='green'
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+
+<body>
+
+    <p>Drag the football image into the square:</p>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br>
+    <img id="drag1" src="https://pngimg.com/uploads/football/football_PNG52775.png" draggable="true"
+        ondragstart="drag(event)" width="336" height="69">
+
+</body>
+
+</html>
